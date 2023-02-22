@@ -13,14 +13,7 @@ jobs:
         run: |
              cd ./new-project
              npm ci
-        
-      - name: Install playwright browsers
 
-        run: |
-            ls -a
-            cd ./new-project
-            npx playwright install --with-deps
-      
       - name: Install playwright
         run: |
             ls -a
