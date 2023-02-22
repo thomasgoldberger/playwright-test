@@ -12,6 +12,7 @@ jobs:
 
       - name: Install dependencies
         run: |
+             ls -a
              cd ./playwright-test/new-project
              npm ci
         
