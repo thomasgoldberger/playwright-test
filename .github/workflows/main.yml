@@ -12,7 +12,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-             cd ./playwright-test/new-project/package.json
+             cd ./playwright-test/new-project
              npm ci
         
       - name: Install playwright browsers
