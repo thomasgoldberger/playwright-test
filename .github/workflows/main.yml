@@ -12,8 +12,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-             ls -a
-             cd ./playwright-test/new-project
+             cd ./new-project
              npm ci
         
       - name: Install playwright browsers
