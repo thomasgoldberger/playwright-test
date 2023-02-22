@@ -18,14 +18,18 @@ jobs:
 
         run: |
             ls -a
+            cd ./new-project
             npx playwright install --with-deps
       
       - name: Install playwright
         run: |
             ls -a
+            cd ./new-project
             npm install -D @playwright/test
         
       - name: Run tests
         run: |
+            ls -a
+            cd ./new-project
             ls -a
             npx playwright test
