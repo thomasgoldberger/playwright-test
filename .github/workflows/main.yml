@@ -26,7 +26,7 @@ jobs:
             ls -a
             cd ./new-project
             npm install -D @playwright/test
-            nox playwright install
+            npx playwright install
         
       - name: Run tests
         run: |
