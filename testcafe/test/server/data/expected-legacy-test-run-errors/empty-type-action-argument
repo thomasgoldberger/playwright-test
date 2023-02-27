@@ -1,0 +1,8 @@
+Error at step "Step with <tag>":
+The type action's parameter text is empty.
+
+Browser: Chrome 15.0.874.120 / macOS 10.15
+Screenshot: /unix/path/with/<tag>
+
+Code:
+code and <tag>

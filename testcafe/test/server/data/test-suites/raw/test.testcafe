@@ -1,0 +1,47 @@
+{
+  "fixtures": [
+    {
+      "name": "Fixture1",
+      "pageUrl": "about:blank",
+      "tests": [
+        {
+          "name": "Fixture1Test1",
+          "commands": [
+            {
+              "type": "click",
+              "selector": "#yo"
+            },
+            {
+              "type": "click",
+              "selector": "#yo"
+            }
+          ]
+        },
+        {
+          "name": "Fixture1Test2",
+          "commands": [
+            {
+              "type": "click",
+              "selector": "#yo"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fixture2",
+      "pageUrl": "http://example.org",
+      "tests": [
+        {
+          "name": "Fixture2Test1",
+          "commands": [
+            {
+              "type": "click",
+              "selector": "#yo"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

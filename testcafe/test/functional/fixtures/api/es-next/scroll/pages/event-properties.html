@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" class="html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .space {
+            height: 2000px;
+        }
+        .item {
+            width: 50px;
+            height: 50px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="space-before" class="space"></div>
+    <div id="target" class="item"></div>
+    <div id="space-after" class="space"></div>
+    <div>
+        <span id="emittedEvents"></span>
+        <span id="emittedEventDetails"></span>
+    </div>
+    <script>
+        var item                = document.querySelector('.item');
+        var emittedEventSpan    = document.getElementById('emittedEvents');
+        var emittedEventDetails = document.getElementById('emittedEventDetails');
+
+        function logEvent (event) {
+            emittedEventSpan.textContent += event.type + ';';
+
+            var eventProperties = {
+                name:          event.type,
+                clientX:       event.clientX,
+                clientY:       event.clientY,
+                screenX:       event.screenX,
+                screenY:       event.screenY,
+                ctrl:          event.ctrlKey,
+                alt:           event.altKey,
+                shift:         event.shiftKey,
+                meta:          event.metaKey,
+                buttons:       event.buttons,
+                relatedTarget: event.relatedTarget.className,
+                target:        event.target.className
+            };
+
+            emittedEventDetails.textContent += JSON.stringify(eventProperties) + '|';
+        }
+
+        item.addEventListener('mouseenter', logEvent);
+        item.addEventListener('mouseleave', logEvent);
+    </script>
+</body>
+</html>

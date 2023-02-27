@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="input"/>
+
+<script>
+    window.lastEditingTime = null;
+
+    const input = document.getElementById('input');
+
+    let startTime = null;
+
+    input.addEventListener('focus', function () {
+        startTime = Date.now();
+    });
+
+    input.addEventListener('blur', function () {
+        window.lastEditingTime = Date.now() - startTime;
+    });
+</script>
+</body>
+</html>

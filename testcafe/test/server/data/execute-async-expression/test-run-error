@@ -1,0 +1,11 @@
+An unhandled error occurred in the custom script:
+
+The "timeout" argument is expected to be a positive integer, but it was string.
+
+Browser: Chrome 15.0.874.120 / macOS 10.15
+
+ > 1 |await t.wait('10');
+
+Screenshot: /unix/path/with/<tag>
+
+1

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>gh-1521 (moving element)</title>
+    <style>
+        #target, #start {
+            width: 10px;
+            height: 10px;
+            position: absolute;
+        }
+
+        #target {
+            background-color: yellow;
+            top: 0;
+            left: 150px;
+        }
+
+        #start {
+            background-color: red;
+            top: 0;
+            left: 0px;
+        }
+    </style>
+</head>
+<body>
+<div id="target"></div>
+<div id="start"></div>
+
+<script>
+    const target = document.getElementById('target');
+
+    window.clickCount = 0;
+    window.moveCount  = 0;
+
+    target.addEventListener('click', function () {
+        window.clickCount++;
+    });
+
+    let movingInterval = null;
+
+    function startMoving () {
+        // NOTE: simulate element transition
+        movingInterval = window.setInterval(function () {
+            window.moveCount++;
+
+            target.style.top = window.moveCount * 10 + 'px';
+
+            if (window.moveCount > 50)
+                window.clearInterval(movingInterval);
+        }, 10);
+    }
+
+    document.getElementById('start').addEventListener('mouseleave', function () {
+        startMoving();
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Script execution barrier</title>
+</head>
+<body>
+<button id="add-scripts">Add scripts</button>
+<button id="add-long-loading-script">Add long loading script</button>
+<button id="add-repetitive-adding-scripts">Add repetitive adding scripts</button>
+
+<script>
+    window.loadedScripts = 0;
+
+    function appendScript (delay) {
+        const script = document.createElement('script');
+
+        script.src = './script.js?delay=' + delay;
+
+        document.body.appendChild(script);
+
+        return script;
+    }
+
+    document.getElementById('add-scripts').addEventListener('click', function () {
+        const addedScript = appendScript(500);
+
+        addedScript.onload = function () {
+            appendScript(250);
+        };
+    });
+
+    document.getElementById('add-long-loading-script').addEventListener('click', function () {
+        appendScript(5000);
+    });
+
+    document.getElementById('add-repetitive-adding-scripts').addEventListener('click', function () {
+        const maxScriptsCount = 10;
+
+        let scriptsCount = 0;
+
+        function iterate () {
+            // HACK: we should request different URLs to avoid caching of response in IE 10
+            const addedScript = appendScript(1000 + scriptsCount);
+
+            addedScript.onload = function () {
+                if (++scriptsCount < maxScriptsCount)
+                    iterate();
+            };
+        }
+
+        iterate();
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+Error at step "Step with <tag>":
+select action's parameters contain an incorrect value.
+
+Browser: Chrome 15.0.874.120 / macOS 10.15
+Screenshot: /unix/path/with/<tag>
+
+Code:
+code and <tag>

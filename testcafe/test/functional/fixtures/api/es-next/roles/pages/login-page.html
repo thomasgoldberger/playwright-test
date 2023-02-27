@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login page</title>
+</head>
+<body>
+<form action="/do-login" method="post">
+    <input type="text" name="name">
+    <input type="submit" value="LogIn">
+</form>
+<script>
+    document.querySelector('form').addEventListener('submit', function () {
+        const name = document.querySelector('[name="name"]').value;
+
+        localStorage.setItem('token', '123456789' + name);
+    });
+</script>
+</body>
+</html>

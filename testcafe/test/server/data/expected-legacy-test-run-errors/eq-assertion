@@ -1,0 +1,13 @@
+"<tagged> message" assertion failed at step "Step with <tag>":
+
+Objects differ at the <tag> field:
+
+Expected: "<another-tag>"
+Actual:   "<some-tag>"
+            ^
+
+Browser: Chrome 15.0.874.120 / macOS 10.15
+Screenshot: /unix/path/with/<tag>
+
+Code:
+eq({"<tag>": "<some-tag>"}, {"<tag>": "<another-tag>"})

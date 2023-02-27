@@ -1,0 +1,17 @@
+{
+  "parserOptions": {
+    "project": "./src/tsconfig.json"
+  },
+  "rules": {
+    "arrow-parens": [2, "as-needed"],
+    "arrow-spacing": [2, { "before": true, "after": true }],
+    "prefer-arrow-callback": 2
+  },
+  "globals": {
+     "Map": true,
+     "WeakMap": true,
+     "Set": true,
+     "Proxy": true,
+     "Reflect": true
+   }
+}

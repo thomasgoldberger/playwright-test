@@ -1,0 +1,10 @@
+"<tagged> message" assertion failed at step "Step with <tag>":
+
+Expected: not "<test>"
+Actual:   "<test>"
+
+Browser: Chrome 15.0.874.120 / macOS 10.15
+Screenshot: /unix/path/with/<tag>
+
+Code:
+notEq("<test>", "<test>")

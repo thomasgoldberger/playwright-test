@@ -1,0 +1,8 @@
+Error at step "Step with <tag>":
+waitFor action's "timeout" parameter should be a positive number.
+
+Browser: Chrome 15.0.874.120 / macOS 10.15
+Screenshot: /unix/path/with/<tag>
+
+Code:
+code and <tag>

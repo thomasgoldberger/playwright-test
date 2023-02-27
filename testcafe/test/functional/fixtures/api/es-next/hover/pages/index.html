@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hover</title>
+
+    <style>
+        div {
+            border: 1px solid black;
+            background-color: rgb(255, 255, 255);
+        }
+
+        div:hover {
+            background-color: rgb(0, 255, 255);
+        }
+
+        #container {
+            width: 200px;
+            height: 200px;
+        }
+
+        .content, .child {
+            border: none;
+        }
+
+        .child {
+            margin-top: 10px;
+        }
+
+        .child, .content {
+            width: 50px;
+            height: 50px;
+
+        }
+
+        #point {
+            position: absolute;
+            left: 300px;
+            top: 300px;
+            width: 5px;
+            height: 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="child1" class="child">
+        <div id="content1" class="content">content1</div>
+    </div>
+    <div id="child2" class="child">
+        <div id="content2" class="content">content2</div>
+    </div>
+</div>
+
+<div id="point"></div>
+
+
+<script>
+    window.eventLog = [];
+    const container   = document.getElementById('container');
+    const child1      = document.getElementById('child1');
+    const child2      = document.getElementById('child2');
+    const content1    = document.getElementById('content1');
+    const content2    = document.getElementById('content2');
+
+    function eventHandler (e) {
+        window.eventLog.push(e.type + ':' + e.target.id + ':' + e.currentTarget.id);
+    }
+
+    function listenElementEvents (element) {
+        element.addEventListener('mouseover', eventHandler);
+        element.addEventListener('mouseenter', eventHandler);
+        element.addEventListener('mouseout', eventHandler);
+        element.addEventListener('mouseleave', eventHandler);
+    }
+
+    listenElementEvents(container);
+    listenElementEvents(content1);
+    listenElementEvents(content2);
+    listenElementEvents(child1);
+    listenElementEvents(child2);
+</script>
+</body>
+</html>

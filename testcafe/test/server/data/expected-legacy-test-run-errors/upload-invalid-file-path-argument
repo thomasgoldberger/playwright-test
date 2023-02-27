@@ -1,0 +1,8 @@
+Error at step "Step with <tag>":
+upload action's "path" parameter should be a string or an array of strings.
+
+Browser: Chrome 15.0.874.120 / macOS 10.15
+Screenshot: /unix/path/with/<tag>
+
+Code:
+code and <tag>

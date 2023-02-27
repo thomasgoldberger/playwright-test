@@ -2,8 +2,8 @@ name: playwright-test
 
 on: [push]
 jobs:
-  tests_e2e:
-    name: Run end-to-end tests
+  tests_e2e_playwright:
+    name: Run end-to-end tests with playwright
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -24,3 +24,19 @@ jobs:
         run: |
             cd ./playwright-test
             npx playwright test
+
+  test_e2e_testcafe:
+    name: Run end-to-end test with test_e2e_testcafe
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+
+      - name: Install testcafe dependencies
+        run: |
+             cd ./testcafe
+             npm install -g testcafe
+      - name: Run tests headless
+        run: |
+            cd ./testcafe/examples/basic
+            testcafe "chrome:headless" test.js  
