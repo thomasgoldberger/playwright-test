@@ -1,6 +1,9 @@
 name: playwright-test
 
-on: [push]
+on: 
+  push:
+  workflow_dispatch:
+    
 jobs:
   tests_e2e_playwright:
     name: Run end-to-end tests with playwright
